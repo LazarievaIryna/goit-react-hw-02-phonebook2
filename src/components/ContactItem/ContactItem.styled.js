@@ -7,6 +7,10 @@ export const BtnDelete = styled.button`
   border: 1px solid grey;
   border-radius: 4px;
   padding: 3px;
+  :hover,
+  :focus {
+    background-color: blue;
+  }
 `;
 export const Item = styled.li`
   margin-bottom: 10px;
