@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Form, Label, Input, BtnAdd } from './ContactForm.styled';
 
