@@ -24,11 +24,26 @@ export class App extends Component {
     const { contacts } = this.state;
     const newContact = { name, number, id };
 
-    contacts.find(contact => contact.name.toLowerCase() === name)
-      ? alert(`${name} is already in contacts.`)
-      : this.setState(({ contacts }) => ({
-          contacts: [...contacts, newContact],
-        }));
+    const checkName = contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase() );
+    const checkNumber = contacts.find(contact => contact.number === number )
+    if(checkName){
+      alert(`${name} is already in contacts.`)
+    }
+    else if(checkNumber){
+      alert(`${number} is already in contacts.`)
+    }
+    else{
+      this.setState(({ contacts }) => ({
+               contacts: [...contacts, newContact],
+             }))
+    }
+
+    // contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase() )
+    //   ? alert(`${name} is already in contacts.`) 
+    //   : this.setState(({ contacts }) => ({
+    //       contacts: [...contacts, newContact],
+    //     }));
+
   };
 
   changeFilter = event => {
